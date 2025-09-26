@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Kids Program - Presentation Board</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            padding: 20px;
+            color: #2c3e50;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: #34495e;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        
+        .card h2 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .card h3 {
+            color: #34495e;
+            font-size: 1.1em;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .schedule-table th {
+            background: #ecf0f1;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .schedule-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .location-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .yakuin {
+            background: #e8f4f8;
+            color: #2980b9;
+        }
+        
+        .nishijin {
+            background: #f4e8f8;
+            color: #8e44ad;
+        }
+        
+        ul {
+            list-style-position: inside;
+            line-height: 1.8;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: #3498db;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #3498db;
+        }
+        
+        .full-width-card {
+            grid-column: 1 / -1;
+        }
+        
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .note {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        
+        .key-point {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .two-column-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>English Kids Program Launch Plan</h1>
+            <div class="subtitle">Yakuin & Nishijin Locations - Schedule & Implementation Strategy</div>
+        </div>
+        
+        <div class="grid">
+            <!-- Program Overview -->
+            <div class="card">
+                <h2>Program Structure</h2>
+                <h3>Frequency & Make-Up Rules</h3>
+                <ul>
+                    <li><span class="key-point">Base Rule:</span> Once per week per child</li>
+                    <li><span class="key-point">Fallback System:</span></li>
+                </ul>
+                <div style="margin-left: 20px;">
+                    <p><span class="location-badge yakuin">Yakuin</span> Monday (if) full → Thursday</p>
+                    <p><span class="location-badge nishijin">Nishijin</span> Tuesday (if full) → Friday</p>
+                </div>
+                
+                <h3>Grade Bands</h3>
+                <ul>
+                    <li><span class="key-point">Lower:</span> Grades 1-3</li>
+                    <li><span class="key-point">Upper:</span> Grades 4-6</li>
+                </ul>
+            </div>
+            
+            <!-- Weekly Schedule -->
+            <div class="card">
+                <h2>Weekly Class Schedule</h2>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Days</th>
+                            <th>Times</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="location-badge yakuin">Yakuin</span></td>
+                            <td>Mon & Thu</td>
+                            <td>16:00-17:00 (G1-3)<br>17:00-18:00 (G4-6)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="location-badge nishijin">Nishijin</span></td>
+                            <td>Tue & Fri</td>
+                            <td>16:00-17:00 (G1-3)<br>17:00-18:00 (G4-6)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <strong>Note:</strong> FC owner approval needed for Nishijin Tue/Fri off-peak schedule
+                </div>
+            </div>
+            
+            <!-- Capacity & Scaling -->
+            <div class="card">
+                <h2>Capacity & Scaling</h2>
+                <h3>Initial Capacity</h3>
+                <ul>
+                    <li><span class="key-point">Per block:</span> Start with 6 kids (safe & coachable)</li>
+                    <li><span class="key-point">Duration:</span> 60 minutes per block</li>
+                    <li><span class="key-point">Daily blocks:</span> 2 per location</li>
+                </ul>
+                
+                <h3>Growth Strategy</h3>
+                <ul>
+                    <li>After testing: Consider possible Scale to 8 → 10 → 12 kids/block</li>
+                    <li><span class="key-point">Overflow solution:</span> Saturday rotation</li>
+                </ul>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <p>If day 1 and day 2 full(example, Monday and Thursday):</p>
+                    <p>•Week A: Yakuin Saturday</p>
+                    <p>•Week B: Nishijin Saturday</p>
+                </div>
+            </div>
+            
+            <!-- Operational Rationale -->
+            <div class="card">
+                <h2>Operational Design</h2>
+                <h3>Staffing Efficiency</h3>
+                <ul>
+                    <li>One English Kids coach covers both sites</li>
+                    <li><span class="key-point">Coach off-days:</span> Wednesday & Sunday</li>
+                </ul>
+                
+                <h3>Strategic Scheduling</h3>
+                <ul>
+                    <li>Yakuin kids classes before adult evening classes (Mon/Thu)</li>
+                    <li>Nishijin on Tue/Fri avoids cross-site conflicts</li>
+                </ul>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="card full-width-card">
+                <h2>Launch Timeline</h2>
+                <div class="two-column-grid">
+                    <div>
+                        <h3>Preparation Phase (10 Days)</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <strong>Pricing Decision:</strong> Finalize fees
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Content Development:</strong> 3-month curriculum & certificates (10 days)
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Flyer Adjustments:</strong> 2 days
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Print Production:</strong> 5 business days
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Distribution:</strong> 10 days posting window
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>Launch Schedule</h3>
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #2980b9; margin-bottom: 10px;">Yakuin (October 2025)</h4>
+                            <ul>
+                                <li>Design & Print: Oct 1</li>
+                                <li>Posting: Oct 13-24</li>
+                                <li>First trials: Oct 27</li>
+                                <li><span class="highlight">Pilot: Nov 2025 - Jan 2026</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: #8e44ad; margin-bottom: 10px;">Nishijin (January 2026)</h4>
+                            <ul>
+                                <li>Preparation: December 2025</li>
+                                <li>Launch: January 2026</li>
+                                <li><span class="highlight">Pilot: Jan - Mar 2026</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Critical Considerations -->
+            <div class="card full-width-card">
+                <h2>Strategic Considerations</h2>
+                <div class="two-column-grid">
+                    <div>
+                        <h3>Why Avoid December Start (Nishijin)</h3>
+                        <ul>
+                            <li>Family travel & year-end holidays disrupt routines</li>
+                            <li>School winter break changes schedules</li>
+                            <li>Competition from intensive winter courses</li>
+                            <li>Year-end party season reduces focus</li>
+                            <li>Reduced gym hours (Dec 29 - Jan 3)</li>
+                            <li><span class="key-point">January = Fresh start mindset for parents</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>Success Factors</h3>
+                        <ul>
+                            <li><span class="key-point">Trial Response:</span> Expect inquiries 3-5 days after posting</li>
+                            <li><span class="key-point">Main Wave:</span> Weeks 2-4 after distribution</li>
+                            <li><span class="key-point">Payment Start:</span> Classes begin week after trial week</li>
+                            <li><span class="key-point">Focus Opportunity:</span> Consider adult program development at Yakuin through October</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
